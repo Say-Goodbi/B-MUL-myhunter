@@ -12,7 +12,5 @@ sfTexture *new_texture(char *texturepath)
 {
     sfTexture *texture = sfTexture_createFromFile(texturepath, NULL);
 
-    if (!texture)
-        exit(84);
     return texture;
 }

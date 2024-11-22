@@ -7,10 +7,53 @@
 
 NAME	=	my_hunter
 
-SRC	=	main.c
+SRC	=	close_window.c \
+	destroy_mysprite.c \
+	launch_run.c \
+	manage_key_pressed.c \
+	my_strcpy.c \
+	pause_game.c \
+	show_scored.c \
+	actualize_instance.c \
+	destroy_resources.c \
+	load_a_mob.c \
+	manage_mouse_click.c \
+	new_spawner_c.c \
+	quit_party.c \
+	spawner_clocks.c \
+	actualize_sprites.c \
+	default_game_instance.c \
+	draw_instance.c \
+	load_duck.c \
+	move_rect.c \
+	new_sprite.c \
+	analyse_events.c \
+	default_resources.c \
+	draw_sprites.c \
+	load_meatball.c \
+	move_sprites.c \
+	new_texture.c \
+	resume_game.c \
+	string_strcmp.c \
+	append_sprite.c \
+	delimit_mysprite.c \
+	draw_texts.c \
+	load_menu.c \
+	my_get_nbr.c \
+	new_window.c \
+	save_score.c \
+	append_text.c \
+	destroy_all_sprites.c \
+	fs_get_number_from_first_line.c \
+	main.c \
+	up_evolution_stage.c \
+	destroy_instance.c \
+	launch_clocks.c \
+	my_put_nbr.c \
+	shoot_target.c
 
 $(NAME) :
-	gcc *.c -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)
+	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)
 
 all : $(NAME)
 

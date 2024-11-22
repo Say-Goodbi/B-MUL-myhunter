@@ -14,14 +14,20 @@ float square(float nb)
     return nb * nb;
 }
 
-int shoot_target(sfMouseButtonEvent ev, mysprite_t **my_sprites, int i)
+int shoot_target(sfMouseButtonEvent ev, instance_t **game, int i)
 {
-    sfVector2f current_pos = sfSprite_getPosition(my_sprites[i]->sprite);
+    mysprite_t **my_sprite = &(*game)->resources->sprites[i];
+    sfVector2f current_pos = sfSprite_getPosition((*my_sprite)->sprite);
+    char score = 0;
 
-    current_pos.x += my_sprites[i]->offset / 2;
-    current_pos.y += my_sprites[i]->offset / 2;
-    if (my_sprites[i]->type == 1)
+    current_pos.x += (*my_sprite)->offset / 2;
+    current_pos.y += (*my_sprite)->offset / 2;
+    if ((*my_sprite)->type <= 1) {
         if (sqrt(square((float)ev.x - current_pos.x) +
-            square((float)ev.y - current_pos.y)) <= 50)
-            destroy_mysprite(&my_sprites[i]);
+            square((float)ev.y - current_pos.y)) <= 50) {
+            destroy_mysprite(my_sprite);
+            return 1;
+        }
+    }
+    return 0;
 }

@@ -14,7 +14,13 @@ void analyse_events(instance_t *game)
     switch (type) {
         case sfEvtMouseButtonPressed :
             return manage_mouse_click(game->event.mouseButton, game);
+        case sfEvtKeyPressed :
+            return manage_key_pressed(game->event.key, game);
         case sfEvtClosed :
             return close_window(game->window);
+        case sfEvtLostFocus :
+            return pause_game(game);
+        case sfEvtGainedFocus :
+            return resume_game(game);
     }
 }

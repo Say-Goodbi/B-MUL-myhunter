@@ -9,6 +9,7 @@
     #define MY_HUNTER_H_
     #include "resources.h"
 sfSprite *new_sprite(sfTexture *texture);
+int my_strcmp(char *s1, char *s2);
 void destroy_resources(resources_t *resources);
 resources_t *default_resources(void);
 void load_duck(resources_t *resources, float x, float y);
@@ -20,15 +21,35 @@ sfSprite *new_sprite(sfTexture *texture);
 void move_rect(sfIntRect *rect, int offset, int max_value);
 void draw_instance(instance_t *game);
 void draw_sprites(sfRenderWindow *window, mysprite_t **mysprites);
+void draw_texts(sfRenderWindow *window, sfText **texts);
 void destroy_instance(instance_t *game);
 instance_t *default_game_instance(void);
 void delimit_mysprite(mysprite_t *mysprite,
     sfIntRect *box, int offset, int frames);
 void actualize_sprites(mysprite_t **my_sprites);
-void actualize_instance(instance_t *game);
+void run_actualize_instance(instance_t *game);
+void idle_actualize_instance(instance_t *game);
 void move_sprites(mysprite_t **my_sprites);
 void append_sprite(resources_t *resources, mysprite_t *mysprite);
-int shoot_target(sfMouseButtonEvent ev, mysprite_t **my_sprites, int i);
+void append_text(resources_t *resources, sfText *text);
+int shoot_target(sfMouseButtonEvent ev, instance_t **game, int i);
 void destroy_mysprite(mysprite_t **mysprite);
 void launch_clocks(instance_t *game);
+void show_scored(int shoot_res, sfMouseButtonEvent event,
+    instance_t **game);
+void launch_run(instance_t **game);
+void load_menu(resources_t *resources);
+spawner_t *new_spawner_c(void);
+void load_a_random_mob(instance_t **game, spawner_t **spawner, int i);
+void spawner_clocks(instance_t **game);
+void up_evolution_stage(instance_t **game);
+char *my_strcpy(char *dest, char const *src);
+void pause_game(instance_t *game);
+void resume_game(instance_t *game);
+void manage_key_pressed(sfKeyEvent ev, instance_t *game);
+void destroy_all_sprites(resources_t *resources);
+void quit_party(instance_t *game);
+void save_score(instance_t *game);
+void my_put_nbr(int nb, int fd);
+int fs_get_number_from_first_line(int fd);
 #endif

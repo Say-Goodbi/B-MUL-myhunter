@@ -15,7 +15,5 @@ sfRenderWindow *new_window(void)
 
     window = sfRenderWindow_create(mode, "SFML window",
         sfResize | sfClose, NULL);
-    if (!window)
-        exit(84);
     return window;
 }

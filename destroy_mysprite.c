@@ -13,7 +13,6 @@
 
 void destroy_mysprite(mysprite_t **mysprite)
 {
-    printf("sprite : %p\n", mysprite);
     if (*mysprite != NULL) {
         sfSprite_destroy((*mysprite)->sprite);
         free(*mysprite);

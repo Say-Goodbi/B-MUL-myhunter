@@ -11,4 +11,5 @@ void launch_clocks(instance_t *game)
 {
     game->actuclock = sfClock_create();
     game->moveclock = sfClock_create();
+    game->gametime = sfClock_create();
 }

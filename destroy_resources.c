@@ -12,8 +12,7 @@ void destroy_resources(resources_t *resources)
     for (int i = 0; i < MAX_MUSICS; i++)
         if (resources->musics[i])
             sfMusic_destroy(resources->musics[i]);
-    for (int i = 0; i < MAX_SPRITES; i++)
-        destroy_mysprite(&resources->sprites[i]);
+    destroy_all_sprites(resources);
     for (int i = 0; i < NUM_TEXTURES; i++)
         if (resources->textures[i])
             sfTexture_destroy(resources->textures[i]);
