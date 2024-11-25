@@ -51,7 +51,6 @@ SRC	=	close_window.c \
 	launch_clocks.c \
 	my_put_nbr.c \
 	shoot_target.c \
-	nbr_to_str.c \
 	emphasize_text.c \
 	my_strdup.c \
 	default_score_display.c \

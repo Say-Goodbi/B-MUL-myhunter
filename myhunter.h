@@ -53,7 +53,6 @@ void save_score(instance_t *game);
 void my_put_nbr(int nb, int fd);
 int fs_get_number_from_first_line(int fd);
 void emphasize_text(sfText *text);
-char *nbr_to_str(int nb);
 sfText *default_score_display(void);
 void actualize_score_display(instance_t **game);
 void reset_score(instance_t *game);
