@@ -53,8 +53,13 @@ void save_score(instance_t *game);
 void my_put_nbr(int nb, int fd);
 int fs_get_number_from_first_line(int fd);
 void emphasize_text(sfText *text);
+void delete_gone_sprite(mysprite_t **my_sprites, int i, sfVector2f pos);
 sfText *default_score_display(void);
 void actualize_score_display(instance_t **game);
 void reset_score(instance_t *game);
 void destroy_spawner(spawner_t *spawner_c);
+void move_duck(mysprite_t **my_sprites, int i);
+void load_bouncyball(resources_t *resources, float x, float y);
+void move_bouncyball(mysprite_t **my_sprites, int i);
+void change_string_menu(sfText **text, int best_score);
 #endif

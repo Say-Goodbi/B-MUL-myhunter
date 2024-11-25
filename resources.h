@@ -18,14 +18,27 @@
 
 typedef struct gameinstance instance_t;
 
+typedef enum mobtype_s {
+    STARTBUTTON = 0,
+    DUCK = 1,
+    BOUNCYBALL = 2
+} mobtype_t;
+
+typedef enum gamestate_s {
+    MENU = 0,
+    RUNNING = 1,
+    PAUSED = 2
+} gamestate_t;
+
 typedef struct mysprite {
     sfSprite *sprite;
     sfIntRect box;
-    char type;
+    mobtype_t type;
     int offset;
     int frames;
     float velocity_x;
     float velocity_y;
+    int radius;
 } mysprite_t;
 
 typedef struct mytext {
@@ -53,7 +66,7 @@ typedef struct spawner {
 typedef struct gameinstance {
     sfRenderWindow *window;
     sfEvent event;
-    char status;
+    gamestate_t status;
     spawner_t *spawner_c;
     sfClock *actuclock;
     sfClock *moveclock;
@@ -62,12 +75,5 @@ typedef struct gameinstance {
     resources_t *resources;
     sfText *score_display;
 } instance_t;
-
-/*
-Status :
-    0 -> menu
-    1 -> playing
-    2 -> paused
-*/
 
 #endif

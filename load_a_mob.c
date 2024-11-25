@@ -12,7 +12,15 @@
 void load_mob(instance_t **game, int mobtype)
 {
     srand(time(NULL) + rand());
-    load_duck((*game)->resources, -80.0f, (float)(rand() % 700 + 200));
+    switch (mobtype) {
+        case DUCK :
+            load_duck((*game)->resources, -80.0f, (float)(rand() % 700 + 200));
+            break;
+        case BOUNCYBALL :
+            load_bouncyball((*game)->resources, (float)(rand() % 120 - 180),
+                (float)(rand() % 700 + 200));
+            break;
+    }
 }
 
 void load_a_random_mob(instance_t **game, spawner_t **spawner, int i)

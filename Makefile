@@ -30,7 +30,6 @@ SRC	=	close_window.c \
 	analyse_events.c \
 	default_resources.c \
 	draw_sprites.c \
-	load_meatball.c \
 	move_sprites.c \
 	new_texture.c \
 	resume_game.c \
@@ -56,7 +55,11 @@ SRC	=	close_window.c \
 	default_score_display.c \
 	actualize_score_display.c \
 	reset_score.c \
-	destroy_spawner.c
+	destroy_spawner.c \
+	move_duck.c \
+	delete_gone_sprites.c \
+	load_bouncyball.c \
+	move_bouncyball.c
 
 $(NAME) :
 	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)

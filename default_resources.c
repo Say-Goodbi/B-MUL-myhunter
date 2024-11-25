@@ -37,6 +37,7 @@ static sfTexture **default_textures(void)
 
     for (int i = 0; i < NUM_TEXTURES; i++)
         textures[i] = sfTexture_createFromFile(TEXTUREPATHS[i], NULL);
+    textures[2] = sfTexture_createFromFile("mb.png", NULL);
     return textures;
 }
 
