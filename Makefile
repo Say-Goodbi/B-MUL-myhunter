@@ -42,7 +42,7 @@ SRC	=	close_window.c \
 	my_get_nbr.c \
 	new_window.c \
 	save_score.c \
-	append_text.c \
+	get_unused_text.c \
 	destroy_all_sprites.c \
 	fs_get_number_from_first_line.c \
 	main.c \
@@ -50,7 +50,14 @@ SRC	=	close_window.c \
 	destroy_instance.c \
 	launch_clocks.c \
 	my_put_nbr.c \
-	shoot_target.c
+	shoot_target.c \
+	nbr_to_str.c \
+	emphasize_text.c \
+	my_strdup.c \
+	default_score_display.c \
+	actualize_score_display.c \
+	reset_score.c \
+	destroy_spawner.c
 
 $(NAME) :
 	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)

@@ -8,19 +8,25 @@
 #include <stdio.h>
 #include "myhunter.h"
 
-void draw_a_text(sfRenderWindow *window, sfText *text)
+void draw_a_text(sfRenderWindow *window, mytext_t **mytext)
 {
-    if (sfText_getCharacterSize(text) > 0) {
-        sfText_setPosition(text, (sfVector2f){10, 10});
-        sfRenderWindow_drawText(window, text, NULL);
+    sfRenderWindow_drawText(window, (*mytext)->text, NULL);
+    (*mytext)->age += 1;
+    if ((*mytext)->age % 30 == 0) {
+        sfText_setCharacterSize((*mytext)->text,
+            sfText_getCharacterSize((*mytext)->text) + 1);
+    }
+    if ((*mytext)->age > 2000) {
+        sfText_setCharacterSize((*mytext)->text, 1);
+        (*mytext)->age = 0;
     }
 }
 
-void draw_texts(sfRenderWindow *window, sfText **texts)
+void draw_texts(sfRenderWindow *window, mytext_t **texts)
 {
     for (int i = 0; i < MAX_TEXTS; i++) {
-        if (texts[i] != NULL) {
-            draw_a_text(window, texts[i]);
+        if (texts[i]->age > 1) {
+            draw_a_text(window, &texts[i]);
         }
     }
 }

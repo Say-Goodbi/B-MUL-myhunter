@@ -7,6 +7,8 @@
 
 #include <stdlib.h>
 #include <stddef.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include "myhunter.h"
 #include "resources.h"
 
@@ -38,24 +40,28 @@ static sfTexture **default_textures(void)
     return textures;
 }
 
-static sfText **default_texts(void)
+static mytext_t **default_texts(void)
 {
-    sfText **texts = malloc(MAX_TEXTS * sizeof(sfText *));
+    mytext_t **texts = malloc(MAX_TEXTS * sizeof(mytext_t *));
     sfFont *font = sfFont_createFromFile("OverLight.otf");
 
-    for (int i = 0; i < MAX_TEXTS; i++)
-        texts[i] = NULL;
-    texts[0] = sfText_create();
-    sfText_setFont(texts[0], font);
-    sfText_setString(texts[0], "(+ %d)");
-    sfText_setCharacterSize(texts[0], 0);
+    for (int i = 0; i < MAX_TEXTS; i++) {
+        texts[i] = malloc(sizeof(mytext_t));
+        texts[i]->text = sfText_create();
+        texts[i]->age = 0;
+        sfText_setFont(texts[i]->text, font);
+        sfText_setString(texts[i]->text, "(+ %d)");
+        sfText_setCharacterSize(texts[i]->text, 0);
+    }
     return texts;
 }
 
 resources_t *default_resources(void)
 {
     resources_t *resources = malloc(sizeof(resources_t));
+    int fd = open("score", O_CREAT | O_RDONLY, 0666);
 
+    resources->best_score = fs_get_number_from_first_line(fd);
     resources->score = 0;
     resources->evolution_score = 0;
     resources->texts = default_texts();
@@ -63,5 +69,6 @@ resources_t *default_resources(void)
     resources->sprites = default_sprites();
     resources->musics = default_musics();
     resources->evolution_stage = 1;
+    close(fd);
     return resources;
 }

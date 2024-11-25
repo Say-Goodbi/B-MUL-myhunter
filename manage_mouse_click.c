@@ -30,7 +30,7 @@ void manage_mouse_click(sfMouseButtonEvent event, instance_t *game)
         if (my_sprites[i] != NULL && my_sprites[i]->type >= 0) {
             stype = my_sprites[i]->type;
             shoot_res += shoot_target(event, &game, i);
-            is_shot(shoot_res, event, &game, stype);
         }
     }
+    is_shot(shoot_res, event, &game, stype);
 }

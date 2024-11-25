@@ -12,7 +12,7 @@
     #define DFLT_SPAWNSCORE 2
     #define MAX_SPRITES 100
     #define MAX_MUSICS 6
-    #define MAX_TEXTS 4
+    #define MAX_TEXTS 40
     #define NUM_TEXTURES 2
     #define TEXTUREPATHS (char *[]){"sprite.png", "textures/PA-Plates.png"}
 
@@ -28,15 +28,20 @@ typedef struct mysprite {
     float velocity_y;
 } mysprite_t;
 
+typedef struct mytext {
+    sfText *text;
+    int age;
+} mytext_t;
+
 typedef struct resources {
-    sfText **texts;
+    mytext_t **texts;
     sfTexture **textures;
     mysprite_t **sprites;
     sfMusic **musics;
-    int best_score;
     int score;
     int evolution_score;
     int evolution_stage;
+    int best_score;
 } resources_t;
 
 typedef struct spawner {
@@ -55,6 +60,7 @@ typedef struct gameinstance {
     sfClock *gametime;
     sfVector2u win_size;
     resources_t *resources;
+    sfText *score_display;
 } instance_t;
 
 /*

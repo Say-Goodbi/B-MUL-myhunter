@@ -17,6 +17,5 @@ void destroy_resources(resources_t *resources)
         if (resources->textures[i])
             sfTexture_destroy(resources->textures[i]);
     for (int i = 0; i < MAX_TEXTS; i++)
-        if (resources->texts[i])
-            sfText_destroy(resources->texts[i]);
+        sfText_destroy(resources->texts[i]->text);
 }

@@ -21,7 +21,7 @@ sfSprite *new_sprite(sfTexture *texture);
 void move_rect(sfIntRect *rect, int offset, int max_value);
 void draw_instance(instance_t *game);
 void draw_sprites(sfRenderWindow *window, mysprite_t **mysprites);
-void draw_texts(sfRenderWindow *window, sfText **texts);
+void draw_texts(sfRenderWindow *window, mytext_t **texts);
 void destroy_instance(instance_t *game);
 instance_t *default_game_instance(void);
 void delimit_mysprite(mysprite_t *mysprite,
@@ -31,7 +31,7 @@ void run_actualize_instance(instance_t *game);
 void idle_actualize_instance(instance_t *game);
 void move_sprites(mysprite_t **my_sprites);
 void append_sprite(resources_t *resources, mysprite_t *mysprite);
-void append_text(resources_t *resources, sfText *text);
+mytext_t **get_unused_text(resources_t *resources);
 int shoot_target(sfMouseButtonEvent ev, instance_t **game, int i);
 void destroy_mysprite(mysprite_t **mysprite);
 void launch_clocks(instance_t *game);
@@ -52,4 +52,10 @@ void quit_party(instance_t *game);
 void save_score(instance_t *game);
 void my_put_nbr(int nb, int fd);
 int fs_get_number_from_first_line(int fd);
+void emphasize_text(sfText *text);
+char *nbr_to_str(int nb);
+sfText *default_score_display(void);
+void actualize_score_display(instance_t **game);
+void reset_score(instance_t *game);
+void destroy_spawner(spawner_t *spawner_c);
 #endif

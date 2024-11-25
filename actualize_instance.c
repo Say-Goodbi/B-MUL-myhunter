@@ -40,4 +40,5 @@ void idle_actualize_instance(instance_t *game)
         actualize_sprites(game->resources->sprites);
         sfClock_restart(game->actuclock);
     }
+    sfText_setString(game->score_display, "Score : 23");
 }

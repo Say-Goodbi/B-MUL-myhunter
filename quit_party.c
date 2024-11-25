@@ -13,4 +13,6 @@ void quit_party(instance_t *game)
     game->status = 0;
     load_menu(game->resources);
     save_score(game);
+    reset_score(game);
+    sfMusic_pause(game->resources->musics[0]);
 }

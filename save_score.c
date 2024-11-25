@@ -21,6 +21,8 @@ void save_score(instance_t *game)
         close(fd);
         fd = open("score", O_CREAT | O_APPEND | O_WRONLY | O_TRUNC, 0666);
         my_put_nbr(new_score, fd);
+        game->resources->best_score = new_score;
+        emphasize_text(game->score_display);
     }
     close(fd);
 }

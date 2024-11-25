@@ -12,7 +12,7 @@ static int is_enough_to_upstage(instance_t **game,
     int stage, int required_score)
 {
     if ((*game)->spawner_c->are_on[stage] == '0' &&
-        (*game)->resources->evolution_score > required_score)
+        (*game)->resources->evolution_score >= required_score)
         return 1;
     else
         return 0;
