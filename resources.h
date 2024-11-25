@@ -38,7 +38,7 @@ typedef struct mysprite {
     int frames;
     float velocity_x;
     float velocity_y;
-    int radius;
+    float radius;
 } mysprite_t;
 
 typedef struct mytext {
@@ -61,6 +61,7 @@ typedef struct spawner {
     unsigned int lives;
     sfClock **spawnclocks;
     char *are_on;
+    sfClock *offtime;
 } spawner_t;
 
 typedef struct gameinstance {

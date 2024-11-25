@@ -13,7 +13,7 @@ sfText *default_score_display(void)
     sfFont *font = sfFont_createFromFile("OverLight.otf");
     sfText *sd = sfText_create();
     sfVector2f pos = {1500, 20};
-    char *score_str = malloc(50);
+    char *score_str = malloc(23);
 
     score_str = "Score : ";
     sfText_setFont(sd, font);

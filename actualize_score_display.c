@@ -22,7 +22,7 @@ int my_intlen(int nb)
 void change_string_menu(sfText **text, int best_score)
 {
     sfVector2f pos = {1400, 20};
-    char score_str[23] = "Best score : 000000000\n";
+    char score_str[23] = "Best score : 000000000\0";
 
     for (int i = 16; i > 7; i--) {
         score_str[i + 5] = best_score % 10 + 48;
@@ -35,7 +35,7 @@ void change_string_menu(sfText **text, int best_score)
 void change_string_game(sfText **text, int score)
 {
     sfVector2f pos = {1500, 20};
-    char score_str[18] = "Score : 000000000\n";
+    char score_str[18] = "Score : 000000000\0";
 
     for (int i = 16; i > 7; i--) {
         score_str[i] = score % 10 + 48;

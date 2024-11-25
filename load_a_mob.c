@@ -20,6 +20,8 @@ void load_mob(instance_t **game, int mobtype)
             load_bouncyball((*game)->resources, (float)(rand() % 120 - 180),
                 (float)(rand() % 700 + 200));
             break;
+        default:
+            load_duck((*game)->resources, -80.0f, (float)(rand() % 700 + 200));
     }
 }
 
@@ -43,4 +45,5 @@ void load_a_random_mob(instance_t **game, spawner_t **spawner, int i)
     srand(sfClock_getElapsedTime((*game)->gametime).microseconds);
     sfClock_restart((*spawner)->spawnclocks[i]);
     load_mob(game, s + 1);
+    srand(time(NULL));
 }

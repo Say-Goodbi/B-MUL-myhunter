@@ -21,7 +21,7 @@ void load_bouncyball(resources_t *resources, float x, float y)
 
     my_sprite->type = 2;
     my_sprite->radius = 80;
-    my_sprite->velocity_x = 0.15f;
+    my_sprite->velocity_x = 0.3f * (rand() % 3 + 1);
     my_sprite->velocity_y = 0.4f * ((rand() % 2) * 2 - 1);
     my_sprite->sprite = new_sprite(resources->textures[2]);
     delimit_mysprite(my_sprite, &box, offset, frames);

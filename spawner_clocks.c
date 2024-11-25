@@ -20,7 +20,7 @@ void spawner_clocks(instance_t **game)
     for (int i = 0; (*spawner)->are_on[i] == '1' && i < 7; i++) {
         ms = sfClock_getElapsedTime((*spawner)->spawnclocks[i]).microseconds;
         srand(rand());
-        if ((ms / 1000000 > 2 && rand() % 100 > 5) || ms / 1000000 > 6)
+        if ((ms / 1000000 > 2 && rand() % 100 > 15) || ms / 1000000 > 6)
             load_a_random_mob(game, spawner, i);
     }
 }

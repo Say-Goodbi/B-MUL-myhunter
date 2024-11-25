@@ -9,6 +9,6 @@
 
 void delete_gone_sprite(mysprite_t **my_sprites, int i, sfVector2f pos)
 {
-    if (pos.x > 1900 || pos.x < -100)
+    if (pos.x > 2000 || pos.x < -100)
         destroy_mysprite(&my_sprites[i]);
 }
