@@ -34,6 +34,7 @@ typedef struct mysprite {
     sfSprite *sprite;
     sfIntRect box;
     mobtype_t type;
+    char alive;
     int offset;
     int frames;
     float velocity_x;

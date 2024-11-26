@@ -19,6 +19,7 @@ static sfMusic **default_musics(void)
     for (int i = 0; i < MAX_MUSICS; i++)
         musics[i] = NULL;
     musics[0] = sfMusic_createFromFile("ABT_Remix.ogg");
+    sfMusic_setLoop(musics[0], sfTrue);
     return musics;
 }
 

@@ -17,6 +17,7 @@ mytext_t **get_unused_text(resources_t *resources)
         i++;
     if (i < MAX_TEXTS) {
         resources->texts[i]->age = 2;
+        sfText_setFillColor(resources->texts[i]->text, sfYellow);
         return &resources->texts[i];
     }
     return NULL;

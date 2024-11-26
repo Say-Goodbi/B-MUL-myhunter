@@ -7,7 +7,7 @@
 
 #include "myhunter.h"
 
-void move_duck(mysprite_t **my_sprites, int i)
+void move_duck(mysprite_t **my_sprites, int i, spawner_t *spawner_c)
 {
     sfVector2f pos = {0};
 
@@ -15,5 +15,5 @@ void move_duck(mysprite_t **my_sprites, int i)
     pos.x += my_sprites[i]->velocity_x;
     pos.y += my_sprites[i]->velocity_y;
     sfSprite_setPosition(my_sprites[i]->sprite, pos);
-    delete_gone_sprite(my_sprites, i, pos);
+    delete_gone_sprite(my_sprites, i, pos, spawner_c);
 }

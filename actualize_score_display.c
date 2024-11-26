@@ -32,7 +32,7 @@ void change_string_menu(sfText **text, int best_score)
     sfText_setPosition(*text, pos);
 }
 
-void change_string_game(sfText **text, int score)
+void change_string_game(sfText **text, int score, int bscore)
 {
     sfVector2f pos = {1500, 20};
     char score_str[18] = "Score : 000000000\0";
@@ -41,6 +41,10 @@ void change_string_game(sfText **text, int score)
         score_str[i] = score % 10 + 48;
         score /= 10;
     }
+    if (score > bscore)
+        sfText_setFillColor(*text, sfYellow);
+    else
+        sfText_setFillColor(*text, sfWhite);
     sfText_setString(*text, score_str);
     sfText_setPosition(*text, pos);
 }
@@ -52,7 +56,7 @@ void actualize_score_display(instance_t **game)
     int intlen = my_intlen(score);
 
     if ((*game)->status == 1)
-        change_string_game(&(*game)->score_display, score);
+        change_string_game(&(*game)->score_display, score, best_score);
     else
         change_string_menu(&(*game)->score_display, best_score);
 }

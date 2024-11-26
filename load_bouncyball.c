@@ -20,6 +20,7 @@ void load_bouncyball(resources_t *resources, float x, float y)
     mysprite_t *my_sprite = malloc(sizeof(mysprite_t));
 
     my_sprite->type = 2;
+    my_sprite->alive = 1;
     my_sprite->radius = 80;
     my_sprite->velocity_x = 0.3f * (rand() % 3 + 1);
     my_sprite->velocity_y = 0.4f * ((rand() % 2) * 2 - 1);

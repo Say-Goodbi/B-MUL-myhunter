@@ -20,6 +20,7 @@ void load_duck(resources_t *resources, float x, float y)
     mysprite_t *my_sprite = malloc(sizeof(mysprite_t));
 
     my_sprite->type = 1;
+    my_sprite->alive = 1;
     my_sprite->radius = 55;
     my_sprite->velocity_x = 0.3f;
     my_sprite->velocity_y = 0.02f;

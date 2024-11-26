@@ -18,7 +18,7 @@ void run_actualize_instance(instance_t *game)
         sfClock_restart(game->actuclock);
     }
     if (move_ms > 1000 && game->status == 1) {
-        move_sprites(game->resources->sprites);
+        move_sprites(game->resources->sprites, game->spawner_c);
         sfClock_restart(game->moveclock);
     }
     if ((sfMusic_getStatus(curr_m) == sfPaused ||

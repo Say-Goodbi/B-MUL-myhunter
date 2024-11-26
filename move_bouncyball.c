@@ -7,7 +7,7 @@
 
 #include "myhunter.h"
 
-void move_bouncyball(mysprite_t **my_sprites, int i)
+void move_bouncyball(mysprite_t **my_sprites, int i, spawner_t *spawner_c)
 {
     sfVector2f pos = {0};
     sfVector2f scaledown = {0.9999, 0.9999};
@@ -22,5 +22,5 @@ void move_bouncyball(mysprite_t **my_sprites, int i)
     pos.x += my_sprites[i]->velocity_x;
     pos.y += my_sprites[i]->velocity_y;
     sfSprite_setPosition(my_sprites[i]->sprite, pos);
-    delete_gone_sprite(my_sprites, i, pos);
+    delete_gone_sprite(my_sprites, i, pos, spawner_c);
 }

@@ -42,6 +42,8 @@ int run_iteration(instance_t **game)
         if ((*game)->status == 1)
             spawner_clocks(game);
         run_actualize_instance(*game);
+        if ((*game)->spawner_c->lives < 1)
+            quit_party(*game);
     }
     draw_instance(*game);
 }

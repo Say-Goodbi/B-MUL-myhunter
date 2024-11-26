@@ -6,9 +6,14 @@
 */
 
 #include "myhunter.h"
+#include <stdio.h>
 
-void delete_gone_sprite(mysprite_t **my_sprites, int i, sfVector2f pos)
+void delete_gone_sprite(mysprite_t **my_sprites, int i, sfVector2f pos,
+    spawner_t *spawner_c)
 {
-    if (pos.x > 2000 || pos.x < -100)
-        destroy_mysprite(&my_sprites[i]);
+    if (pos.x > 1700 || pos.x < -300) {
+        my_sprites[i]->alive = 0;
+        spawner_c->lives -= 1;
+        printf("%d\n", spawner_c->lives);
+    }
 }

@@ -32,7 +32,7 @@ int shoot_target(sfMouseButtonEvent ev, instance_t **game, int i)
     int type = (*my_sprite)->type;
     char score = 0;
 
-    if (do_mobs_collide(ev, my_sprite) == 1) {
+    if (do_mobs_collide(ev, my_sprite) == 1 && (*my_sprite)->alive == 1) {
         destroy_mysprite(my_sprite);
         return type == 0 ? 1 : type;
     }

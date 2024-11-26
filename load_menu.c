@@ -20,6 +20,7 @@ void load_menu(resources_t *resources)
     mysprite_t *my_sprite = malloc(sizeof(mysprite_t));
 
     my_sprite->type = 0;
+    my_sprite->alive = 1;
     my_sprite->radius = 200;
     my_sprite->velocity_x = 0.0f;
     my_sprite->velocity_y = 0.0f;

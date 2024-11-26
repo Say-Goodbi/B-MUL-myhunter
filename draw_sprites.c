@@ -15,7 +15,7 @@ void draw_a_sprite(sfRenderWindow *window, mysprite_t *mysprite)
 
     sfSprite_setTextureRect(mysprite->sprite, mysprite->box);
     sfRenderWindow_drawSprite(window, mysprite->sprite, NULL);
-    if (mysprite->type == BOUNCYBALL)
+    if (mysprite->type == BOUNCYBALL && mysprite->alive == 1)
         sfSprite_rotate(mysprite->sprite, 0.06f);
 }
 
