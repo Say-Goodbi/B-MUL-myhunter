@@ -59,7 +59,10 @@ SRC	=	close_window.c \
 	move_duck.c \
 	delete_gone_sprites.c \
 	load_bouncyball.c \
-	move_bouncyball.c
+	move_bouncyball.c \
+	load_fork.c \
+	move_fork.c \
+	do_mobs_collide.c
 
 $(NAME) :
 	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)

@@ -21,9 +21,12 @@ void load_mob(instance_t **game, int mobtype)
             load_bouncyball((*game)->resources, (float)(rand() % 120 - 180),
                 (float)(rand() % 700 + 200));
             break;
+        case FORK :
+            load_fork((*game)->resources, (float)(rand() % 60 - 40.0f),
+                (float)(rand() % 700 + 200));
         default:
             load_duck((*game)->resources, - (float)(rand() % 80) - 40.0f,
-            (float)(rand() % 700 + 200));
+                (float)(rand() % 700 + 200));
     }
 }
 

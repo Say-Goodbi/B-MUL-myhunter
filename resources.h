@@ -21,7 +21,8 @@ typedef struct gameinstance instance_t;
 typedef enum mobtype_s {
     STARTBUTTON = 0,
     DUCK = 1,
-    BOUNCYBALL = 2
+    BOUNCYBALL = 2,
+    FORK = 3
 } mobtype_t;
 
 typedef enum gamestate_s {

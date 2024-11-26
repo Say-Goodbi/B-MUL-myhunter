@@ -17,6 +17,9 @@ void move_a_sprite(mysprite_t **my_sprites, int i, spawner_t *spawner_c)
         case BOUNCYBALL :
             move_bouncyball(my_sprites, i, spawner_c);
             break;
+        case FORK :
+            move_fork(my_sprites, i, spawner_c);
+            break;
     }
 }
 

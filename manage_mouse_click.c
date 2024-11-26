@@ -27,7 +27,7 @@ void manage_mouse_click(sfMouseButtonEvent event, instance_t *game)
     mysprite_t **my_sprites = game->resources->sprites;
 
     for (int i = 0; i < MAX_SPRITES; i++) {
-        if (my_sprites[i] != NULL && my_sprites[i]->type >= 0) {
+        if (my_sprites[i] != NULL) {
             stype = my_sprites[i]->type;
             shoot_res += shoot_target(event, &game, i);
         }

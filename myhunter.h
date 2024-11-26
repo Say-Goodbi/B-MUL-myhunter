@@ -63,4 +63,7 @@ void move_duck(mysprite_t **my_sprites, int i, spawner_t *spawner_c);
 void load_bouncyball(resources_t *resources, float x, float y);
 void move_bouncyball(mysprite_t **my_sprites, int i, spawner_t *spawner_c);
 void change_string_menu(sfText **text, int best_score);
+void load_fork(resources_t *resources, float x, float y);
+void move_fork(mysprite_t **my_sprites, int i, spawner_t *spawner_c);
+int do_mobs_collide(sfMouseButtonEvent ev, mysprite_t **my_sprite);
 #endif
