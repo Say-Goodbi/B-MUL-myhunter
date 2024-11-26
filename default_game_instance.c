@@ -32,3 +32,5 @@ instance_t *default_game_instance(void)
     game->score_display = default_score_display();
     return game;
 }
+
+//    sfRenderWindow_setFramerateLimit(game->window, 60);

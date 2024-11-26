@@ -13,5 +13,7 @@ void destroy_instance(instance_t *game)
     destroy_resources(game->resources);
     sfClock_destroy(game->moveclock);
     sfClock_destroy(game->actuclock);
+    sfClock_destroy(game->gametime);
+    sfText_destroy(game->score_display);
     sfRenderWindow_destroy(game->window);
 }
