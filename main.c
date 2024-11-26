@@ -31,6 +31,8 @@ int show_usage(int ac, char **av)
         my_put_str("Be aware hunter, ");
         my_put_str("some pasta could make use of ");
         my_put_str("an unpredicatble behavior.\n");
+        my_put_str("Don't let pasta reach the other side of the screen.\n");
+        my_put_str("Five of them get in and you're out !\n");
         return 1;
     }
     return 0;
