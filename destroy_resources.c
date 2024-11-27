@@ -9,9 +9,12 @@
 
 void destroy_resources(resources_t *resources)
 {
-    for (int i = 0; i < MAX_MUSICS; i++)
-        if (resources->musics[i])
+    for (int i = 0; i < MAX_MUSICS; i++) {
+        if (resources->musics[i]) {
+            sfMusic_pause(resources->musics[i]);
             sfMusic_destroy(resources->musics[i]);
+        }
+    }
     destroy_all_sprites(resources);
     for (int i = 0; i < MAX_TEXTS; i++)
         sfText_destroy(resources->texts[i]->text);

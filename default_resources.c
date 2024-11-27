@@ -5,6 +5,7 @@
 ** Returns a struct resources with predefined values.
 */
 
+#include <time.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
@@ -67,6 +68,7 @@ resources_t *default_resources(void)
     resources_t *resources = malloc(sizeof(resources_t));
     int fd = open("score", O_CREAT | O_RDONLY, 0666);
 
+    srand(time(NULL));
     resources->best_score = fs_get_number_from_first_line(fd);
     resources->score = 0;
     resources->evolution_score = 0;
@@ -74,7 +76,7 @@ resources_t *default_resources(void)
     resources->textures = default_textures();
     resources->sprites = default_sprites();
     resources->musics = default_musics();
-    resources->current_music = 0;
+    resources->current_music = rand() % 2;
     resources->evolution_stage = 1;
     close(fd);
     return resources;
