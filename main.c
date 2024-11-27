@@ -21,18 +21,7 @@ void my_put_str(char *str)
 int show_usage(int ac, char **av)
 {
     if (ac == 2 && my_strcmp(av[1], "-h") == 0) {
-        my_put_str("USAGE :\n    ./my_hunter\n\n");
-        my_put_str("Launch a game where you're a pasta hunter, ");
-        my_put_str("isn't it weird ?\n");
-        my_put_str("That's the way you are anyway, don't deny it.\n");
-        my_put_str("\nPasta will appear on the screen, ");
-        my_put_str("destroy them using the mouse click !\n");
-        my_put_str("To quit earlier a running party, use (CTRL + Q).\n");
-        my_put_str("Be aware hunter, ");
-        my_put_str("some pasta could make use of ");
-        my_put_str("an unpredicatble behavior.\n");
-        my_put_str("Don't let pasta reach the other side of the screen.\n");
-        my_put_str("Five of them get in and you're out !\n");
+        fs_cat_x_bytes("info.txt", 580);
         return 1;
     }
     return 0;

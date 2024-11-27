@@ -1,8 +1,8 @@
 ##
 ## EPITECH PROJECT, 2024
-## Upsetting me rn
-## File description:
 ## Makefile
+## File description:
+## What a relief
 ##
 
 NAME	=	my_hunter
@@ -63,7 +63,8 @@ SRC	=	close_window.c \
 	load_fork.c \
 	move_fork.c \
 	do_mobs_collide.c \
-	change_music.c
+	change_music.c \
+	fs_cat_x_bytes.c
 
 $(NAME) :
 	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)
