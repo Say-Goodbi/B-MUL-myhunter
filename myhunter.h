@@ -66,4 +66,5 @@ void change_string_menu(sfText **text, int best_score);
 void load_fork(resources_t *resources, float x, float y);
 void move_fork(mysprite_t **my_sprites, int i, spawner_t *spawner_c);
 int do_mobs_collide(sfMouseButtonEvent ev, mysprite_t **my_sprite);
+void change_music(instance_t **game);
 #endif

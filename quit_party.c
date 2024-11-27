@@ -16,5 +16,5 @@ void quit_party(instance_t *game)
     change_string_menu(&(game->score_display),
         game->resources->best_score);
     reset_score(game);
-    sfMusic_pause(game->resources->musics[0]);
+    sfMusic_pause(game->resources->musics[game->resources->current_music]);
 }

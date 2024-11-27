@@ -11,6 +11,5 @@ void pause_game(instance_t *game)
 {
     if (game->status == 1) {
         game->status = 2;
-        game->spawner_c->offtime = sfClock_create();
     }
 }

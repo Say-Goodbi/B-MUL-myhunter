@@ -11,7 +11,7 @@ void run_actualize_instance(instance_t *game)
 {
     int actu_ms = sfClock_getElapsedTime(game->actuclock).microseconds;
     int move_ms = sfClock_getElapsedTime(game->moveclock).microseconds;
-    sfMusic *curr_m = game->resources->musics[0];
+    sfMusic *curr_m = game->resources->musics[game->resources->current_music];
 
     if (actu_ms > 300000) {
         actualize_sprites(game->resources->sprites);
@@ -23,10 +23,9 @@ void run_actualize_instance(instance_t *game)
     }
     if ((sfMusic_getStatus(curr_m) == sfPaused ||
         sfMusic_getStatus(curr_m) == sfStopped) && game->status == 1) {
-        sfMusic_play(game->resources->musics[0]);
+        sfMusic_play(curr_m);
     } else if (game->status == 2 &&
         sfMusic_getStatus(curr_m) == sfPlaying) {
-        sfMusic_pause(game->resources->musics[0]);
         sfMusic_pause(curr_m);
     }
 }

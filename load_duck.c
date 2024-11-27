@@ -21,6 +21,7 @@ void load_duck(resources_t *resources, float x, float y)
 
     my_sprite->type = 1;
     my_sprite->alive = 1;
+    my_sprite->rot = 0;
     my_sprite->radius = 55;
     my_sprite->velocity_x = 0.3f;
     my_sprite->velocity_y = 0.02f;

@@ -41,6 +41,7 @@ typedef struct mysprite {
     float velocity_x;
     float velocity_y;
     float radius;
+    float rot;
 } mysprite_t;
 
 typedef struct mytext {
@@ -53,6 +54,7 @@ typedef struct resources {
     sfTexture **textures;
     mysprite_t **sprites;
     sfMusic **musics;
+    int current_music;
     int score;
     int evolution_score;
     int evolution_stage;

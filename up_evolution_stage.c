@@ -26,13 +26,13 @@ void up_evolution_stage(instance_t **game)
     if (is_enough_to_upstage(game, 2, 8) == 1) {
         (*game)->spawner_c->are_on[2] = '1';
     }
-    if (is_enough_to_upstage(game, 3, 10) == 1) {
+    if (is_enough_to_upstage(game, 3, 20) == 1) {
         (*game)->spawner_c->are_on[3] = '1';
     }
-    if (is_enough_to_upstage(game, 4, 20) == 1) {
+    if (is_enough_to_upstage(game, 4, 50) == 1) {
         (*game)->spawner_c->are_on[4] = '1';
     }
-    if (is_enough_to_upstage(game, 5, 50) == 1) {
+    if (is_enough_to_upstage(game, 5, 120) == 1) {
         (*game)->spawner_c->are_on[5] = '1';
     }
 }

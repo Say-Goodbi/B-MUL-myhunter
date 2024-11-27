@@ -8,12 +8,13 @@
 #include "myhunter.h"
 #include "stdio.h"
 
-void is_shot(int shoot_res, sfMouseButtonEvent ev, instance_t **game, int type)
+void is_shot(int shoot_res, sfMouseButtonEvent ev,
+    instance_t **game, mobtype_t type)
 {
     if (shoot_res > 0) {
-        if (type == 0)
+        if (type == STARTBUTTON)
             launch_run(game);
-        else {
+        if (type > 0) {
             up_evolution_stage(game);
             show_scored(shoot_res, ev, game);
         }
@@ -23,7 +24,7 @@ void is_shot(int shoot_res, sfMouseButtonEvent ev, instance_t **game, int type)
 void manage_mouse_click(sfMouseButtonEvent event, instance_t *game)
 {
     int shoot_res = 0;
-    int stype = 0;
+    mobtype_t stype = 0;
     mysprite_t **my_sprites = game->resources->sprites;
 
     for (int i = 0; i < MAX_SPRITES; i++) {

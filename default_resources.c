@@ -19,7 +19,10 @@ static sfMusic **default_musics(void)
     for (int i = 0; i < MAX_MUSICS; i++)
         musics[i] = NULL;
     musics[0] = sfMusic_createFromFile("ABT_Remix.ogg");
-    sfMusic_setLoop(musics[0], sfTrue);
+    musics[1] = sfMusic_createFromFile("YlvisFox.ogg");
+    musics[2] = sfMusic_createFromFile("Otonoke.ogg");
+    for (int i = 0; i < MAX_MUSICS && musics[i] != NULL; i++)
+        sfMusic_setLoop(musics[i], sfTrue);
     return musics;
 }
 
@@ -71,6 +74,7 @@ resources_t *default_resources(void)
     resources->textures = default_textures();
     resources->sprites = default_sprites();
     resources->musics = default_musics();
+    resources->current_music = 0;
     resources->evolution_stage = 1;
     close(fd);
     return resources;
