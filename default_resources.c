@@ -55,6 +55,7 @@ static sfTexture **default_textures(void)
     textures[2] = sfTexture_createFromFile("mb.png", NULL);
     textures[3] = sfTexture_createFromFile("fork_r.png", NULL);
     textures[4] = sfTexture_createFromFile("chef.png", NULL);
+    textures[5] = sfTexture_createFromFile("CastleWall.png", NULL);
     return textures;
 }
 

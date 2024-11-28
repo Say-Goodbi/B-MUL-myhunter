@@ -15,5 +15,6 @@ void launch_run(instance_t **game)
     sfText_setFillColor((*game)->score_display, sfWhite);
     sfText_setOutlineThickness((*game)->score_display, 0);
     (*game)->spawner_c = new_spawner_c();
+    load_wall((*game)->resources, 1700.0f, 000.0f);
     load_duck((*game)->resources, -20.0f, 500.0f);
 }

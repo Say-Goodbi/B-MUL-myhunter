@@ -21,7 +21,8 @@ typedef enum mobtype_s {
     STARTBUTTON = 0,
     DUCK = 1,
     BOUNCYBALL = 2,
-    FORK = 3
+    FORK = 3,
+    WALL = 10
 } mobtype_t;
 
 typedef enum gamestate_s {

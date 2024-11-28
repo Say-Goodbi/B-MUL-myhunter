@@ -73,4 +73,5 @@ void load_chef(resources_t *resources, float x, float y);
 void append_menusprite(resources_t *resources, mysprite_t *mysprite);
 void manage_mouse_move(sfMouseMoveEvent ev, instance_t *game);
 float square(float nb);
+void load_wall(resources_t *resources, float x, float y);
 #endif

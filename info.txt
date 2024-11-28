@@ -1,5 +1,5 @@
 USAGE :
-    ./my_hunter;
+    ./my_hunter
 Launch a game where you're a pasta hunter, isn't it weird ?
 That's the way you are anyway, don't deny it.
 
@@ -11,5 +11,5 @@ Be aware hunter, some pasta could make use of an unpredicatble behavior.
 Ducks can do loopings, balls bounce and get smaller with time, 
  and forks are thrown fast but then slow down.
 
-Don't let pasta reach the other side of the screen.
+Don't let pasta reach the castle tower.
     Five of them get in and you're out !
