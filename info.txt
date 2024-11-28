@@ -13,3 +13,6 @@ Ducks can do loopings, balls bounce and get smaller with time,
 
 Don't let pasta reach the castle tower.
     Five of them get in and you're out !
+
+If you need a break, don't worry,
+ just go to an other window and the game will pause itself.
