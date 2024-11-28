@@ -15,3 +15,12 @@ void append_sprite(resources_t *resources, mysprite_t *mysprite)
         i++;
     resources->sprites[i] = mysprite;
 }
+
+void append_menusprite(resources_t *resources, mysprite_t *mysprite)
+{
+    int i = 0;
+
+    while (i < MAX_SPRITES && resources->menusprites[i] != NULL)
+        i++;
+    resources->menusprites[i] = mysprite;
+}

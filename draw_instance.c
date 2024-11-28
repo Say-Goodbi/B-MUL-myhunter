@@ -12,6 +12,7 @@ void draw_instance(instance_t *game)
 {
     sfRenderWindow_clear(game->window, sfBlack);
     draw_sprites(game->window, game->resources->sprites);
+    draw_sprites(game->window, game->resources->menusprites);
     draw_texts(game->window, game->resources->texts);
     actualize_score_display(&game);
     sfRenderWindow_drawText(game->window, game->score_display, NULL);

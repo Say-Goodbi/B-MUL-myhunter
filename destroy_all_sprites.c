@@ -12,3 +12,9 @@ void destroy_all_sprites(resources_t *resources)
     for (int i = 0; i < MAX_SPRITES; i++)
         destroy_mysprite(&resources->sprites[i]);
 }
+
+void destroy_menu_sprites(resources_t *resources)
+{
+    for (int i = 0; i < MAX_SPRITES; i++)
+        destroy_mysprite(&resources->menusprites[i]);
+}

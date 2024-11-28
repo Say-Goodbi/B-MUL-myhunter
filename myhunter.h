@@ -68,4 +68,9 @@ void move_fork(mysprite_t **my_sprites, int i, spawner_t *spawner_c);
 int do_mobs_collide(sfMouseButtonEvent ev, mysprite_t **my_sprite);
 void change_music(instance_t **game);
 void fs_cat_x_bytes(const char *pathname, int x);
+void destroy_menu_sprites(resources_t *resources);
+void load_chef(resources_t *resources, float x, float y);
+void append_menusprite(resources_t *resources, mysprite_t *mysprite);
+void manage_mouse_move(sfMouseMoveEvent ev, instance_t *game);
+float square(float nb);
 #endif

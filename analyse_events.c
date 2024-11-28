@@ -12,6 +12,8 @@ void analyse_events(instance_t *game)
     sfEventType type = game->event.type;
 
     switch (type) {
+        case sfEvtMouseMoved :
+            return manage_mouse_move(game->event.mouseMove, game);
         case sfEvtMouseButtonPressed :
             return manage_mouse_click(game->event.mouseButton, game);
         case sfEvtKeyPressed :

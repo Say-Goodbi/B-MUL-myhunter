@@ -64,7 +64,10 @@ SRC	=	close_window.c \
 	move_fork.c \
 	do_mobs_collide.c \
 	change_music.c \
-	fs_cat_x_bytes.c
+	fs_cat_x_bytes.c \
+	load_chef.c \
+	manage_mouse_move.c \
+	square.c
 
 $(NAME) :
 	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)

@@ -8,11 +8,6 @@
 #include <math.h>
 #include "myhunter.h"
 
-float square(float nb)
-{
-    return nb * nb;
-}
-
 int do_mobs_collide(sfMouseButtonEvent ev, mysprite_t **my_sprite)
 {
     sfVector2f c_pos = sfSprite_getPosition((*my_sprite)->sprite);

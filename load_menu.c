@@ -26,4 +26,5 @@ void load_menu(resources_t *resources)
     sfSprite_setPosition(my_sprite->sprite, vect);
     sfSprite_setOrigin(my_sprite->sprite, origin);
     append_sprite(resources, my_sprite);
+    load_chef(resources, 100.0f, 760.0f);
 }

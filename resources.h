@@ -13,8 +13,7 @@
     #define MAX_SPRITES 100
     #define MAX_MUSICS 6
     #define MAX_TEXTS 40
-    #define NUM_TEXTURES 2
-    #define TEXTUREPATHS (char *[]){"sprite.png", "textures/PA-Plates.png"}
+    #define NUM_TEXTURES 10
 
 typedef struct gameinstance instance_t;
 
@@ -53,6 +52,7 @@ typedef struct resources {
     mytext_t **texts;
     sfTexture **textures;
     mysprite_t **sprites;
+    mysprite_t **menusprites;
     sfMusic **musics;
     int current_music;
     int score;
