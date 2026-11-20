@@ -7,6 +7,17 @@
 
 #include "myhunter.h"
 
+// Anchor the text's right edge 20px from the right side of the 1720 world.
+static void anchor_right(sfText *text)
+{
+    sfVector2f origin = {sfText_getLocalBounds(text).width +
+        sfText_getLocalBounds(text).left, 0};
+    sfVector2f pos = {1700, 20};
+
+    sfText_setOrigin(text, origin);
+    sfText_setPosition(text, pos);
+}
+
 int my_intlen(int nb)
 {
     int l = 1;
@@ -21,7 +32,6 @@ int my_intlen(int nb)
 
 void change_string_menu(sfText **text, int best_score)
 {
-    sfVector2f pos = {1400, 20};
     char score_str[23] = "Best score : 000000000\0";
 
     for (int i = 16; i > 7; i--) {
@@ -29,12 +39,11 @@ void change_string_menu(sfText **text, int best_score)
         best_score /= 10;
     }
     sfText_setString(*text, score_str);
-    sfText_setPosition(*text, pos);
+    anchor_right(*text);
 }
 
 void change_string_game(sfText **text, int score, int bscore)
 {
-    sfVector2f pos = {1500, 20};
     char score_str[18] = "Score : 000000000\0";
 
     for (int i = 16; i > 7; i--) {
@@ -46,7 +55,7 @@ void change_string_game(sfText **text, int score, int bscore)
     else
         sfText_setFillColor(*text, sfWhite);
     sfText_setString(*text, score_str);
-    sfText_setPosition(*text, pos);
+    anchor_right(*text);
 }
 
 void actualize_score_display(instance_t **game)
