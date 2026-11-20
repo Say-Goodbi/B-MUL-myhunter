@@ -71,7 +71,7 @@ SRC	=	close_window.c \
 	load_wall.c
 
 $(NAME) :
-	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-audio -lcsfml-system -o $(NAME)
+	gcc $(SRC) -lm -lcsfml-graphics -lcsfml-window -lcsfml-audio -lcsfml-system -o $(NAME)
 
 all : $(NAME)
 
