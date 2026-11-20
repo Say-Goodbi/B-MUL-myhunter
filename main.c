@@ -21,7 +21,7 @@ void my_put_str(char *str)
 int show_usage(int ac, char **av)
 {
     if (ac == 2 && my_strcmp(av[1], "-h") == 0) {
-        fs_cat_x_bytes("info.txt", 580);
+        fs_cat_x_bytes("info.txt", 700);
         return 1;
     }
     return 0;
