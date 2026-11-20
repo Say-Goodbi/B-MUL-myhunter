@@ -5,6 +5,7 @@
 ** Actualizes game, and sprites.
 */
 
+#include <math.h>
 #include "myhunter.h"
 
 void run_actualize_instance(instance_t *game)
@@ -18,7 +19,9 @@ void run_actualize_instance(instance_t *game)
         sfClock_restart(game->actuclock);
     }
     if (move_ms > 1000 && game->status == 1) {
-        move_sprites(game->resources->sprites, game->spawner_c);
+        // one step per elapsed ms (capped) so speed doesn't depend on fps
+        for (int n = fmin(move_ms / 1000, 50); n > 0; n--)
+            move_sprites(game->resources->sprites, game->spawner_c);
         sfClock_restart(game->moveclock);
     }
     if ((sfMusic_getStatus(curr_m) == sfPaused ||
